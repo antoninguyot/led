@@ -31,9 +31,8 @@ jobs:
         with:
           bun-version: latest
           # Doesn't work for now, we're forced to use a .npmrc
-          registry-url: 'https://npm.pkg.github.com'
           scope: '@${{ github.repository_owner }}'
       - run: bun install --frozen-lockfile
-      - run: bunx npm publish
+      - run: bun publish
         env:
-          BUN_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUN_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
