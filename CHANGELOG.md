@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/antoninguyot/led/compare/v1.0.6...v1.0.7) (2024-10-11)
+
+
+### Bug Fixes
+
+* **ci:** removed npmrc ([8a405e6](https://github.com/antoninguyot/led/commit/8a405e664257d6009ffc8caaf1b314816059364f))
+
 ## [1.0.6](https://github.com/antoninguyot/led/compare/v1.0.5...v1.0.6) (2024-10-11)
 
 
