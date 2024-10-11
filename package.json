@@ -1,6 +1,6 @@
 {
 	"name": "led",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -30,10 +30,18 @@
 	},
 	"typeVersions": {
 		">4.0": {
-			".": ["./dist/index.d.ts"],
-			"panels": ["./dist/panels/index.d.ts"],
-			"tables": ["./dist/tables/index.d.ts"],
-			"forms": ["./dist/forms/index.d.ts"]
+			".": [
+				"./dist/index.d.ts"
+			],
+			"panels": [
+				"./dist/panels/index.d.ts"
+			],
+			"tables": [
+				"./dist/tables/index.d.ts"
+			],
+			"forms": [
+				"./dist/forms/index.d.ts"
+			]
 		}
 	},
 	"files": [
