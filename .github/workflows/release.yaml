@@ -33,7 +33,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@${{ github.repository_owner }}'
       - run: bun install --frozen-lockfile
-      - run: bun package
       - run: bun publish
         env:
           BUN_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

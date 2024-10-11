@@ -1,5 +1,5 @@
 {
-	"name": "led",
+	"name": "@antoninguyot/led",
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
@@ -51,6 +51,9 @@
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
