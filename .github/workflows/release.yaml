@@ -31,7 +31,7 @@ jobs:
         with:
           bun-version: latest
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@${{ github.repository }}'
+          scope: '@${{ github.repository_owner }}'
       - run: bun install --frozen-lockfile
       - run: bun publish
         env:
