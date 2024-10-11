@@ -30,8 +30,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          # Doesn't work for now, we're forced to use a .npmrc
-          scope: '@${{ github.repository_owner }}'
+          scope: "${{ vars.NPM_SCOPE }}"
       - run: bun install --frozen-lockfile
       - run: bun publish
         env:

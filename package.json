@@ -1,5 +1,5 @@
 {
-	"name": "@antoninguyot/led",
+	"name": "@anton42/led",
 	"version": "1.0.7",
 	"repository": {
 		"type": "git",
@@ -55,9 +55,6 @@
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
-	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.2.5",
