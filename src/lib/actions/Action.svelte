@@ -1,7 +1,6 @@
 <script lang="ts">
     import Modal from "./Modal.svelte";
     import { goto } from "$app/navigation";
-    import { closeModal, openModal } from "svelte-modals";
 
     export let type: string | null = null;
     export let label: string;

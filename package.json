@@ -3,7 +3,7 @@
 	"version": "1.0.4",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/antoninguyot/led.git"
+		"url": "git+https://github.com/antoninguyot/led.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -60,21 +60,21 @@
 		"registry": "https://npm.pkg.github.com"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"publint": "^0.2.0",
-		"svelte": "^4.2.7",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.11"
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/package": "^2.3.5",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"publint": "^0.2.11",
+		"svelte": "^4.2.19",
+		"svelte-check": "^4.0.4",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.8"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
 		"@iconify/svelte": "^4.0.2",
+		"@sveltejs/kit": "^2.6.4",
 		"svelte-sonner": "^0.3.28"
 	}
 }

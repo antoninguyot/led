@@ -30,9 +30,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+          # Doesn't work for now, we're forced to use a .npmrc
           registry-url: 'https://npm.pkg.github.com'
           scope: '@${{ github.repository_owner }}'
       - run: bun install --frozen-lockfile
-      - run: bun publish
+      - run: bunx npm publish
         env:
           BUN_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
