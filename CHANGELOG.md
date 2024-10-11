@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/antoninguyot/led/compare/v1.0.1...v1.0.2) (2024-10-11)
+
+
+### Bug Fixes
+
+* use the repository field ([3ca8089](https://github.com/antoninguyot/led/commit/3ca808995e96006677a10555ffade3cd38f49972))
+
 ## [1.0.1](https://github.com/antoninguyot/led/compare/v1.0.0...v1.0.1) (2024-10-11)
 
 
