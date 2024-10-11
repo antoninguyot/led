@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/antoninguyot/led/compare/v1.0.3...v1.0.4) (2024-10-11)
+
+
+### Bug Fixes
+
+* revert use full repository as scope ([8c382c7](https://github.com/antoninguyot/led/commit/8c382c728939d3f50cee43409453a22b07e2cb5d))
+
 ## [1.0.3](https://github.com/antoninguyot/led/compare/v1.0.2...v1.0.3) (2024-10-11)
 
 
