@@ -1,6 +1,7 @@
 {
 	"name": "@antoninguyot/led",
 	"version": "1.0.1",
+	"repository": "https://github.com/antoninguyot/led.git",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
