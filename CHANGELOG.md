@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/antoninguyot/led/compare/v1.0.5...v1.0.6) (2024-10-11)
+
+
+### Bug Fixes
+
+* **ci:** try using bun publish ([4f63381](https://github.com/antoninguyot/led/commit/4f63381865974d3ef4ff498d3922743bb3b57ab3))
+
 ## [1.0.5](https://github.com/antoninguyot/led/compare/v1.0.4...v1.0.5) (2024-10-11)
 
 
