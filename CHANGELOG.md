@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/antoninguyot/led/compare/v1.0.7...v1.0.8) (2024-10-11)
+
+
+### Bug Fixes
+
+* **ci:** correct npm scope ([e7bd29f](https://github.com/antoninguyot/led/commit/e7bd29f2e33de8e6842c4580576e064c3987cefb))
+
 ## [1.0.7](https://github.com/antoninguyot/led/compare/v1.0.6...v1.0.7) (2024-10-11)
 
 
