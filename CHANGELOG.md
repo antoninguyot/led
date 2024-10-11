@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/antoninguyot/led/compare/v1.0.4...v1.0.5) (2024-10-11)
+
+
+### Bug Fixes
+
+* **ci:** use npm to publish the package ([c4f5f98](https://github.com/antoninguyot/led/commit/c4f5f98451170f961b8e9a1cc25265464ff2ae70))
+
 ## [1.0.4](https://github.com/antoninguyot/led/compare/v1.0.3...v1.0.4) (2024-10-11)
 
 
