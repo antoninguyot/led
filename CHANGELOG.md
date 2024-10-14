@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/antoninguyot/led/compare/v1.0.5...v1.0.6) (2024-10-14)
+
+
+### Bug Fixes
+
+* source resource plural title from base resource title ([140f18e](https://github.com/antoninguyot/led/commit/140f18eade9fd11ad9f5c34331b9525dec509955))
+
 ## [1.0.5](https://github.com/antoninguyot/led/compare/v1.0.4...v1.0.5) (2024-10-11)
 
 
