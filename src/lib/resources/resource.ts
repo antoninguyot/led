@@ -41,7 +41,7 @@ export abstract class Resource<T extends Record> {
     }
 
     getResourcePluralTitle(): string {
-        return this.constructor.name + 's';
+        return this.getResourceTitle() + 's';
     }
 
     getNavigationItem(): NavigationItem {
