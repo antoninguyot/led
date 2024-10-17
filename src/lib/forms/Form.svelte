@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Field } from "../forms/field";
-    import Action from "../actions/Action.svelte";
+    import { Field } from "$lib/forms/field";
+    import Action from "$lib/actions/Action.svelte";
 
     export let fields: Field[];
     export let submit: (data: FormData) => void;

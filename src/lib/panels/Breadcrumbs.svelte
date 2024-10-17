@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {NavigationItem} from "./navigation";
+    import type {NavigationItem} from "$lib/panels/navigation";
 
     export let items: NavigationItem[] = []
 </script>

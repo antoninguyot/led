@@ -1,6 +1,6 @@
 <script lang="ts">
-    import {Resource} from "../resources/resource";
-    import Action from "../actions/Action.svelte";
+    import {Resource} from "$lib/resources/resource";
+    import Action from "$lib/actions/Action.svelte";
 
     export let resource: Resource<any>;
 </script>

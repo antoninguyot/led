@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Resource } from "../resources/resource";
-    import Form from "../forms/Form.svelte";
+    import { Resource } from "$lib/resources/resource";
+    import Form from "$lib/forms/Form.svelte";
     import { toast } from "svelte-sonner";
     import Page from "./Page.svelte";
     import { goto } from "$app/navigation";

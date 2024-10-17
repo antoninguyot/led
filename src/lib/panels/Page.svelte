@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Breadcrumbs from "../panels/Breadcrumbs.svelte";
-    import type {NavigationItem} from "../panels/navigation";
+    import Breadcrumbs from "$lib/panels/Breadcrumbs.svelte";
+    import type {NavigationItem} from "$lib/panels/navigation";
     import {getContext} from "svelte";
 
     const isPanelInitialized = getContext<boolean>('panel-initialized');

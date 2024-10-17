@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {evaluate} from "../utils.js";
+    import {evaluate} from "$lib/utils.js";
     import Field from "./Field.svelte";
 
     export let name: string;

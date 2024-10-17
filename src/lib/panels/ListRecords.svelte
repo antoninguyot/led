@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Resource } from "../resources/resource";
-  import Table from "../tables/Table.svelte";
-  import Page from "../panels/Page.svelte";
-  import CreateAction from "../actions/CreateAction.svelte";
+  import { Resource } from "$lib/resources/resource";
+  import Table from "$lib/tables/Table.svelte";
+  import Page from "$lib/panels/Page.svelte";
+  import CreateAction from "$lib/actions/CreateAction.svelte";
 
   export let resource: Resource<any>;
 </script>

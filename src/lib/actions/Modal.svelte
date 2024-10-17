@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
-    import Action from "../actions/Action.svelte";
+    import Action from "$lib/actions/Action.svelte";
     import { fade, scale } from "svelte/transition";
 
     export let isOpen: boolean;

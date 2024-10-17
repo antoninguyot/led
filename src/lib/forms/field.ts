@@ -1,4 +1,4 @@
-import { titleCase } from "../utils";
+import { titleCase } from "$lib/utils";
 
 interface Mutator {
   afterLoading: ((state: any) => any) | null;

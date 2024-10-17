@@ -1,4 +1,4 @@
-import {titleCase} from "../utils";
+import {titleCase} from "$lib/utils";
 
 export class Action {
     name: string;

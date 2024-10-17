@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {Column} from "../tables/column";
+    import type {Column} from "$lib/tables/column";
     import Icon from '@iconify/svelte';
 
     export let columns: Column[];
