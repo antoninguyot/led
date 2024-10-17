@@ -19,22 +19,24 @@
     }
 </script>
 
-{#await record then resolvedRecord}
-    <Page title="View {resource.getResourceTitle()}" breadcrumbs={getBreadcrumbs()}>
+<Page title="View {resource.getResourceTitle()}" breadcrumbs={getBreadcrumbs()}>
+    {#await record then resolvedRecord}
         Viewing {resolvedRecord.id}
 
         <slot name="relations"/>
+    {/await}
 
-        <div slot="actions">
-            {#if $$slots.actions}
-                <slot name="actions"/>
-            {:else}
+    <div slot="actions">
+        {#if $$slots.actions}
+            <slot name="actions"/>
+        {:else}
+            {#await record then resolvedRecord}
                 <Action
                         url={resource.getEditUrl(resolvedRecord)}
                         label="Edit"
                 />
-                <DeleteAction resource={resource} id={id}/>
-            {/if}
-        </div>
-    </Page>
-{/await}
+            {/await}
+            <DeleteAction resource={resource} id={id}/>
+        {/if}
+    </div>
+</Page>

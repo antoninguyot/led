@@ -20,12 +20,13 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <img class="h-auto max-w-40" src={getContext('panel-logo')}
-                             alt="Your Company">
+                             alt={getContext('panel-title')}>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             {#each navigationItems as item}
-                                <a href={item.url} class="rounded-md px-3 py-2 text-sm font-medium {item.isActiveWhen() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
+                                <a href={item.url}
+                                   class="rounded-md px-3 py-2 text-sm font-medium {item.isActiveWhen() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
                                    aria-current="page">{item.name}</a>
                             {/each}
                         </div>
@@ -149,7 +150,11 @@
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <div class="flex justify-between">
                 <div>
-                    {#await breadcrumbs then breadcrumbs}
+                    {#await breadcrumbs}
+                        <div class="animate-pulse">
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+                        </div>
+                    {:then breadcrumbs}
                         <Breadcrumbs items={breadcrumbs}/>
                     {/await}
                     <h1 class="text-3xl font-bold tracking-tight text-gray-900">{title}</h1>

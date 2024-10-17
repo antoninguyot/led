@@ -7,23 +7,21 @@
   export let resource: Resource<any>;
 </script>
 
-{#await resource.list() then records}
-  <Page
-    title="List {resource.getResourcePluralTitle()}"
-    breadcrumbs={resource.getBreadcrumbs()}
-  >
-    <Table
-      {records}
-      columns={resource.table()}
-      getRecordUrlUsing={resource.getViewUrl ?? resource.getEditUrl}
-      emptyStateHeading="No {resource.getResourceTitle()}"
-    />
-    <div slot="actions">
-      {#if $$slots.actions}
-        <slot name="actions" />
-      {:else}
-        <CreateAction {resource} />
-      {/if}
-    </div>
-  </Page>
-{/await}
+<Page
+  title="List {resource.getResourcePluralTitle()}"
+  breadcrumbs={resource.getBreadcrumbs()}
+>
+  <Table
+    records={resource.list()}
+    columns={resource.table()}
+    getRecordUrlUsing={resource.getViewUrl ?? resource.getEditUrl}
+    emptyStateHeading="No {resource.getResourceTitle()}"
+  />
+  <div slot="actions">
+    {#if $$slots.actions}
+      <slot name="actions" />
+    {:else}
+      <CreateAction {resource} />
+    {/if}
+  </div>
+</Page>
