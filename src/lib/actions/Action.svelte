@@ -42,7 +42,6 @@
     async function runAction() {
         const callback = action ?? defaultAction;
         callback({});
-        closeModal();
     }
 
     function handle() {
@@ -62,4 +61,4 @@
     {label}
 </button>
 
-<Modal {color} icon={modalIcon} heading={modalHeading} description={modalDescription} bind:isOpen={showModal} action={runAction} />
+<Modal {color} icon={modalIcon} heading={modalHeading ?? label} description={modalDescription} bind:isOpen={showModal} action={runAction} />

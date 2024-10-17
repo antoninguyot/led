@@ -2,16 +2,17 @@
     import Icon from "@iconify/svelte";
     import Action from "$lib/actions/Action.svelte";
     import { fade, scale } from "svelte/transition";
+    import type {KeyboardEventHandler} from "svelte/elements";
 
     export let isOpen: boolean;
 
-    export let heading: string = "Modal";
+    export let heading: string | null = "Modal";
 
-    export let description: string = "";
+    export let description: string | null = "";
 
-    export let action: (data: { [key: string]: any }) => void | null = null;
+    export let action: ((data: { [key: string]: any }) => void) | null = null;
 
-    export let actionLabel: string = "Submit";
+    export let actionLabel: string | null = "Submit";
 
     export let cancelLabel: string = "Cancel";
 
@@ -35,13 +36,22 @@
     function closeModal(): void {
         isOpen = false;
     }
+
+    function handleKey(e): void {
+        const event = e as unknown as KeyboardEvent;
+
+            console.log(event)
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    }
 </script>
 
 {#if isOpen}
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" transition:fade></div>
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" on:click={closeModal} >
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" on:click={closeModal}>
                 <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6" transition:scale>
                     <div>
                         <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full {colorClasses}">
