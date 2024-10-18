@@ -1,0 +1,1 @@
+export type FormData = Map<string, any>;

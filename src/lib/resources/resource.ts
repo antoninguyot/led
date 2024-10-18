@@ -1,6 +1,6 @@
 import {Column} from "$lib/tables";
-import type {NavigationItem} from "$lib/panels";
-import {Form, Field} from "$lib/forms";
+import type {NavigationItem, FormData} from "$lib/panels";
+import {Form} from "$lib/forms";
 
 interface Record {
     id: string

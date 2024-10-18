@@ -36,15 +36,6 @@
     function closeModal(): void {
         isOpen = false;
     }
-
-    function handleKey(e): void {
-        const event = e as unknown as KeyboardEvent;
-
-            console.log(event)
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    }
 </script>
 
 {#if isOpen}

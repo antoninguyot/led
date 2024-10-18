@@ -6,6 +6,7 @@ import ListRelation from "$lib/panels/ListRelation.svelte";
 import Page from "$lib/panels/Page.svelte";
 import Panel from "$lib/panels/Panel.svelte";
 import type {NavigationItem} from "$lib/panels/navigation";
+import type {FormData} from "$lib/panels/forms";
 
-export type {NavigationItem}
+export type {NavigationItem, FormData}
 export {ListRecords, CreateRecord, EditRecord, ViewRecord, ListRelation, Page, Panel}

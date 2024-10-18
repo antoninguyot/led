@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { Field } from "$lib/forms/field";
+    import {Field} from "$lib/forms/field";
     import Action from "$lib/actions/Action.svelte";
+    import type {FormData} from "$lib/panels";
 
     export let fields: Field[];
     export let submit: (data: FormData) => void;
@@ -9,15 +10,16 @@
 
     function handleSubmit(e: Event) {
         const formData = new FormData(e.target as HTMLFormElement);
+        const data = new Map<string, any>();
         fields.forEach(function (field) {
+            let state = formData.get(field.name)
             if (field.mutator?.beforeSaving) {
-                formData.set(
-                    field.name,
-                    field.mutator.beforeSaving(formData.get(field.name)),
-                );
+                state = field.mutator.beforeSaving(formData.get(field.name));
             }
-        });
-        submit(formData);
+
+            data.set(field.name, state)
+        })
+        submit(data);
     }
 
     function getState(field: Field): any {
@@ -33,13 +35,13 @@
     <div class="grid gap-4 py-4 grid-cols-{columns}">
         {#each fields as field}
             <svelte:component
-                this={field.component}
-                name={field.name}
-                state={getState(field)}
-                {...field.getProps()}
+                    this={field.component}
+                    name={field.name}
+                    state={getState(field)}
+                    {...field.getProps()}
             />
         {/each}
     </div>
 
-    <Action type="submit" label="Submit" />
+    <Action type="submit" label="Submit"/>
 </form>
