@@ -1,3 +1,3 @@
-import {Resource} from "./resources/resource"
+import {Resource} from "$lib/resources/resource"
 
 export {Resource}

@@ -1,6 +1,7 @@
 import {Column} from "$lib/tables";
 import type {NavigationItem, FormData} from "$lib/panels";
 import {Form} from "$lib/forms";
+import type {PaginatedResult, UnpaginatedResult} from "$lib/tables/utils";
 
 interface Record {
     id: string
@@ -10,7 +11,15 @@ export abstract class Resource<T extends Record> {
 
     static shouldRegisterNavigation = true;
 
-    abstract list(): Promise<T[]>
+    shouldPaginate = false;
+
+    list(): Promise<UnpaginatedResult<T>> {
+        throw new Error("Not implemented");
+    }
+
+    paginate(pageNumber: number|string, pageSize: number): Promise<PaginatedResult<T>> {
+        throw new Error("Not implemented");
+    }
 
     abstract create(data: FormData): Promise<void>
 

@@ -7,7 +7,7 @@ export class Checkbox extends Field {
         super(name);
         this.component = BaseComponent
         this.mutator = {
-            afterLoading: (state: boolean) => state ? 'on' : 'off',
+            afterLoading: (state: boolean) => state,
             beforeSaving: (state: string) => state === 'on',
         }
     }
