@@ -7,6 +7,7 @@ import Page from "$lib/panels/Page.svelte";
 import Panel from "$lib/panels/Panel.svelte";
 import type {NavigationItem} from "$lib/panels/navigation";
 import type {FormData} from "$lib/panels/forms";
+import {UserProvider, type User} from "$lib/panels/auth";
 
 export type {NavigationItem, FormData}
-export {ListRecords, CreateRecord, EditRecord, ViewRecord, ListRelation, Page, Panel}
+export {ListRecords, CreateRecord, EditRecord, ViewRecord, ListRelation, Page, Panel, UserProvider, type User}
