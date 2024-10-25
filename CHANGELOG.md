@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/antoninguyot/led/compare/v1.1.0...v1.2.0) (2024-10-25)
+
+
+### Features
+
+* users ([26cac16](https://github.com/antoninguyot/led/commit/26cac16aa6506a91352afb464cb03b58328a4f93))
+
 ## [1.1.0](https://github.com/antoninguyot/led/compare/v1.0.7...v1.1.0) (2024-10-21)
 
 
