@@ -22,6 +22,13 @@
     if (userProvider) {
         setContext('panel-user-provider', userProvider)
         setContext('panel-user', userProvider.user())
+        checkAuth();
+    }
+
+    async function checkAuth() {
+        if (userProvider && !await userProvider.isAuthenticated()) {
+            window.location = userProvider.loginUrl();
+        }
     }
 </script>
 

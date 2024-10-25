@@ -5,7 +5,7 @@ export interface User {
 }
 
 export abstract class UserProvider {
-    abstract isAuthenticated(): boolean;
+    abstract isAuthenticated(): Promise<boolean>;
     abstract user(): Promise<User>;
     abstract logout(): Promise<void>;
     abstract profileUrl(): string;
