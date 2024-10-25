@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/antoninguyot/led/compare/v1.2.0...v1.2.1) (2024-10-25)
+
+
+### Bug Fixes
+
+* enforce auth ([7db8ee0](https://github.com/antoninguyot/led/commit/7db8ee096448fb0fa04b53598138f581fc6761bf))
+
 ## [1.2.0](https://github.com/antoninguyot/led/compare/v1.1.0...v1.2.0) (2024-10-25)
 
 
