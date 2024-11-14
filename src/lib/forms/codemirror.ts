@@ -1,0 +1,24 @@
+import {Field} from "./field";
+import BaseComponent from "./Codemirror.svelte";
+
+export class Codemirror extends Field {
+    extensions: any[] = [];
+
+    constructor(name: string) {
+        super(name);
+        this.component = BaseComponent;
+    }
+
+    setExtensions(extensions: any[]) {
+        this.extensions = extensions;
+        return this;
+    }
+
+    getProps(): { [key: string]: any } {
+        return {
+            label: this.label,
+            columnSpan: this.columnSpan,
+            additionalExtensions: this.extensions,
+        };
+    }
+}

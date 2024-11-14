@@ -75,6 +75,7 @@
 	"dependencies": {
 		"@iconify/svelte": "^4.0.2",
 		"@sveltejs/kit": "^2.6.4",
+		"codemirror": "^6.0.1",
 		"svelte-sonner": "^0.3.28"
 	}
 }
