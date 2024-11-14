@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antoninguyot/led/compare/v1.2.1...v1.3.0) (2024-11-14)
+
+
+### Features
+
+* codemirror field ([f6af03c](https://github.com/antoninguyot/led/commit/f6af03cc8d24fe684f6c4ffc3b1f92102dd7ecc7))
+
 ## [1.2.1](https://github.com/antoninguyot/led/compare/v1.2.0...v1.2.1) (2024-10-25)
 
 
