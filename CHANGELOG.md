@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0](https://github.com/antoninguyot/led/compare/v1.3.0...v1.4.0) (2024-11-19)
+
+
+### Features
+
+* column mutators ([e1ea621](https://github.com/antoninguyot/led/commit/e1ea621f2ddcb1b3db60962a9b8581121f133db5))
+* file uploads ([b551204](https://github.com/antoninguyot/led/commit/b5512044a8b80fb01d7e4079f3b16bcea4834687))
+* infolists ([71c2794](https://github.com/antoninguyot/led/commit/71c2794de0b4b84bf2468e52105b4308ab883bba))
+* required fields ([cd1441e](https://github.com/antoninguyot/led/commit/cd1441e47655d54f48f36dd4c45d0d2d0eb90d95))
+
+
+### Bug Fixes
+
+* use card component for infolists ([890e554](https://github.com/antoninguyot/led/commit/890e55446b908ddef7ad89c16ab9097a88adced1))
+
 ## [1.3.0](https://github.com/antoninguyot/led/compare/v1.2.1...v1.3.0) (2024-11-14)
 
 
