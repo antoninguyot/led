@@ -2,23 +2,27 @@
     import {Field} from "$lib/forms/field";
     import Action from "$lib/actions/Action.svelte";
     import type {FormData} from "$lib/panels";
+    import {readFileUpload} from "$lib/forms/utils";
 
     export let fields: Field[];
     export let submit: (data: FormData) => void;
     export let state: { [key: string]: any } = {};
     export let columns: number = 1;
 
-    function handleSubmit(e: Event) {
+    async function handleSubmit(e: Event) {
         const formData = new FormData(e.target as HTMLFormElement);
         const data = new Map<string, any>();
-        fields.forEach(function (field) {
+        for (const field of fields) {
             let state = formData.get(field.name)
+            if (state instanceof File) {
+                 state = await readFileUpload(state);
+            }
             if (field.mutator?.beforeSaving) {
-                state = field.mutator.beforeSaving(formData.get(field.name));
+                state = await field.mutator.beforeSaving(state);
             }
 
             data.set(field.name, state)
-        })
+        }
         submit(data);
     }
 
