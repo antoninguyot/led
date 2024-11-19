@@ -1,6 +1,7 @@
 import {Column} from "$lib/tables";
-import type {NavigationItem, FormData} from "$lib/panels";
 import {Form} from "$lib/forms";
+import {Infolist} from "$lib/infolists";
+import type {NavigationItem, FormData} from "$lib/panels";
 import type {PaginatedResult, UnpaginatedResult} from "$lib/tables/utils";
 
 interface Record {
@@ -32,6 +33,10 @@ export abstract class Resource<T extends Record> {
     abstract table(): Column[]
 
     abstract form(): Form
+
+    infolist(): Infolist {
+        return new Infolist();
+    }
 
     abstract getViewUrl(record: T): string
 

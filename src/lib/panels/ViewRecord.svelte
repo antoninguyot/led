@@ -3,6 +3,7 @@
     import Page from "$lib/panels/Page.svelte";
     import Action from "$lib/actions/Action.svelte";
     import DeleteAction from "$lib/actions/DeleteAction.svelte";
+    import Infolist from "$lib/infolists/Infolist.svelte";
 
     export let id: any;
 
@@ -21,7 +22,7 @@
 
 <Page title="View {resource.getResourceTitle()}" breadcrumbs={getBreadcrumbs()}>
     {#await record then resolvedRecord}
-        Viewing {resolvedRecord.id}
+        <Infolist state={resolvedRecord} entries={resource.infolist().schema} columns={resource.infolist().columns} />
 
         <slot name="relations"/>
     {/await}

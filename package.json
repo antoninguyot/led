@@ -30,6 +30,10 @@
 		"./tables": {
 			"types": "./dist/tables/index.d.ts",
 			"svelte": "./dist/tables/index.js"
+		},
+		"./infolists": {
+			"types": "./dist/infolists/index.d.ts",
+			"svelte": "./dist/infolists/index.js"
 		}
 	},
 	"typeVersions": {
@@ -45,6 +49,9 @@
 			],
 			"forms": [
 				"./dist/forms/index.d.ts"
+			],
+			"infolists": [
+				"./dist/infolists/index.d.ts"
 			]
 		}
 	},
