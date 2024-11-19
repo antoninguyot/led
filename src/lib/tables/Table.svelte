@@ -13,6 +13,14 @@
 
     export let pageNumber: number = 1;
     export let pageSize: number = 10;
+
+    function getState(column: Column, record: any): any {
+        if (column.mutator?.afterLoading) {
+            return column.mutator.afterLoading(record[column.name]);
+        }
+
+        return record[column.name];
+    }
 </script>
 
 <div class="flow-root mt-4">
@@ -52,9 +60,11 @@
                                     {#each columns as column}
                                         <td class="whitespace-nowrap px-3 py-4 text-sm">
                                             <a href={getRecordUrlUsing !== null ? getRecordUrlUsing(record) : '#'}>
-                                                <svelte:component this={column.component}
-                                                                  state={record[column.name]}
-                                                                  {...column.getProps()}/>
+                                                {#await getState(column, record) then state}
+                                                    <svelte:component this={column.component}
+                                                                      state={state}
+                                                                      {...column.getProps()}/>
+                                                {/await}
                                             </a>
                                         </td>
                                     {/each}
@@ -63,7 +73,8 @@
                             </tbody>
                         </table>
                         {#if resolvedRecords.hasOwnProperty('total')}
-                            <Pagination bind:pageNumber={pageNumber} bind:pageSize={pageSize} totalRecords={resolvedRecords.total} />
+                            <Pagination bind:pageNumber={pageNumber} bind:pageSize={pageSize}
+                                        totalRecords={resolvedRecords.total}/>
                         {/if}
                     {:else}
                         <div class="mx-auto grid max-w-lg justify-items-center text-center my-8">

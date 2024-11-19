@@ -27,7 +27,7 @@ export class Field {
     return this
   }
 
-  setMutatator(mutator: Mutator): this {
+  setMutator(mutator: Mutator): this {
     this.mutator = mutator;
     return this;
   }
