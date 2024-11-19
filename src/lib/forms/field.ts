@@ -11,6 +11,7 @@ export class Field {
   label: string;
   columnSpan: string|number = 1;
   mutator: Mutator | null = null;
+  required: boolean = false;
 
   constructor(name: string) {
     this.name = name;
@@ -32,10 +33,16 @@ export class Field {
     return this;
   }
 
+  setRequired(required: boolean = true): this {
+    this.required = required;
+    return this;
+  }
+
   getProps(): { [key: string]: any } {
     return {
       label: this.label,
       columnSpan: this.columnSpan,
+      required: this.required,
     };
   }
 }

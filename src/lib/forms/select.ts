@@ -18,7 +18,8 @@ export class Select extends Field {
     getProps(): { [key: string]: any } {
         return {
             label: this.label,
-            options: this.options
+            options: this.options,
+            required: this.required,
         };
     }
 }
