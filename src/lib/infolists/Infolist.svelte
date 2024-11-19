@@ -1,5 +1,6 @@
 <script lang="ts">
     import type {Entry} from "$lib/infolists/entry";
+    import Card from "$lib/panels/Card.svelte";
 
     export let entries: Entry[];
     export let state: { [key: string]: any } = {};
@@ -14,15 +15,17 @@
     }
 </script>
 
-<div class="grid gap-4 py-4 grid-cols-{columns}">
-    {#each entries as entry}
-        {#await getState(entry) then state}
-            <svelte:component
-                    this={entry.component}
-                    name={entry.name}
-                    state={state}
-                    {...entry.getProps()}
-            />
-        {/await}
-    {/each}
-</div>
+<Card>
+    <div class="grid gap-4 py-4 grid-cols-{columns} px-4">
+        {#each entries as entry}
+            {#await getState(entry) then state}
+                <svelte:component
+                        this={entry.component}
+                        name={entry.name}
+                        state={state}
+                        {...entry.getProps()}
+                />
+            {/await}
+        {/each}
+    </div>
+</Card>

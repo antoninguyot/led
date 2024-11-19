@@ -3,6 +3,7 @@
     import Icon from '@iconify/svelte';
     import type {PaginatedResult, UnpaginatedResult} from "$lib/tables/utils";
     import Pagination from "$lib/tables/Pagination.svelte";
+    import Card from "$lib/panels/Card.svelte";
 
     export let columns: Column[];
     export let records: Promise<UnpaginatedResult<any>> | Promise<PaginatedResult<any>>;

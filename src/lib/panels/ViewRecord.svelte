@@ -22,7 +22,10 @@
 
 <Page title="View {resource.getResourceTitle()}" breadcrumbs={getBreadcrumbs()}>
     {#await record then resolvedRecord}
-        <Infolist state={resolvedRecord} entries={resource.infolist().schema} columns={resource.infolist().columns} />
+        {#if resource.infolist().schema.length > 0}
+            <Infolist state={resolvedRecord} entries={resource.infolist().schema}
+                      columns={resource.infolist().columns}/>
+        {/if}
 
         <slot name="relations"/>
     {/await}
