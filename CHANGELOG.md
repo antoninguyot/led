@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/antoninguyot/led/compare/v1.4.0...v1.5.0) (2025-02-07)
+
+
+### Features
+
+* implement Text List entry ([#17](https://github.com/antoninguyot/led/issues/17)) ([89c84dc](https://github.com/antoninguyot/led/commit/89c84dcef56dcd25a0035131b4a73d36bc452367))
+
 ## [1.4.0](https://github.com/antoninguyot/led/compare/v1.3.0...v1.4.0) (2024-11-19)
 
 
