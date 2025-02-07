@@ -1,4 +1,4 @@
-import {Infolist} from './infolist'
-import {TextEntry} from './textentry'
+import { Infolist } from './infolist'
+import { TextEntry } from './textentry'
 
-export {Infolist, TextEntry}
+export { Infolist, TextEntry }
