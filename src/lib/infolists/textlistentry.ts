@@ -3,7 +3,6 @@ import BaseComponent from "./TextListEntry.svelte";
 
 export class TextListEntry extends Entry {
   fontFamily: string = "sans-serif";
-  items: string[] = [];
 
   constructor(name: string) {
     super(name);
@@ -15,17 +14,11 @@ export class TextListEntry extends Entry {
     return this;
   }
 
-  setItems(items: string[]): this {
-    this.items = items;
-    return this;
-  }
-
   getProps(): { [key: string]: any } {
     return {
       label: this.label,
       columnSpan: this.columnSpan,
       fontFamily: this.fontFamily,
-      items: this.items,
     };
   }
 }
