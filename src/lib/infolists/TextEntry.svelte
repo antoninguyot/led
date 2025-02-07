@@ -24,5 +24,13 @@
 </script>
 
 <Entry {label} {name} {columnSpan}>
-    <pre class="text-sm {fontClass}">{state}</pre>
+    {#if Array.isArray(state)}
+        <ul class="text-sm list-disc pl-4">
+        {#each state as item}
+            <li class="text-sm {fontClass}">{item}</li>
+        {/each}
+        </ul>
+    {:else}
+        <pre class="text-sm {fontClass}">{state}</pre>
+    {/if}
 </Entry>
