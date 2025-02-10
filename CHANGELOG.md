@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0](https://github.com/antoninguyot/led/compare/v1.5.0...v1.6.0) (2025-02-10)
+
+
+### Features
+
+* badge columns & entries ([8ea562a](https://github.com/antoninguyot/led/commit/8ea562a0ce579f9717d6fb59846de1ecc2675e2a))
+* dot notation support ([#19](https://github.com/antoninguyot/led/issues/19)) ([fd91010](https://github.com/antoninguyot/led/commit/fd910106e62966310b617f88a788618b47c7ca01))
+* table row actions ([2cc1aad](https://github.com/antoninguyot/led/commit/2cc1aad7b91a49075f00b90c894647fd0acd40bd))
+
 ## [1.5.0](https://github.com/antoninguyot/led/compare/v1.4.0...v1.5.0) (2025-02-07)
 
 
