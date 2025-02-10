@@ -1,11 +1,14 @@
 <script lang="ts">
     import Modal from "./Modal.svelte";
-    import { goto } from "$app/navigation";
+    import {goto} from "$app/navigation";
+    import {setContext} from "svelte";
 
     export let type: string | null = null;
+    export let link: boolean = false;
     export let label: string;
     export let color: string = "primary";
-    export let url: string | null = null;
+    export let url: string | (() => string) | null = null;
+    export let record: any = null;
     export let requiresConfirmation: boolean = false;
     export let modalHeading: string | null = null;
     export let modalDescription: string | null = null;
@@ -14,6 +17,9 @@
         | ((data: { [key: string]: any }) => void)
         | ((data: { [key: string]: any }) => Promise<void>)
         | null = null;
+
+
+    setContext("record", record);
 
     let colorClasses: string;
     switch (color) {
@@ -31,11 +37,17 @@
             break;
     }
 
+    let resolvedUrl = typeof url === "function" ? url() : url;
+
     let showModal = false;
 
     function defaultAction(): void {
-        if (url) {
-            goto(url);
+        if (resolvedUrl) {
+            if (resolvedUrl.startsWith('http')) {
+                window.open(resolvedUrl, '_blank');
+            } else {
+                goto(resolvedUrl);
+            }
         }
     }
 
@@ -53,12 +65,17 @@
     }
 </script>
 
-<button
-    on:click={handle}
-    {type}
-    class="rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 {colorClasses}"
->
-    {label}
-</button>
+{#if link}
+    <span on:click={handle} class="text-sm cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">{label}</span>
+{:else}
+    <button
+            on:click={handle}
+            {type}
+            class="rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 {colorClasses}"
+    >
+        {label}
+    </button>
+{/if}
 
-<Modal {color} icon={modalIcon} heading={modalHeading ?? label} description={modalDescription} bind:isOpen={showModal} action={runAction} />
+<Modal {color} icon={modalIcon} heading={modalHeading ?? label} description={modalDescription} bind:isOpen={showModal}
+       action={runAction}/>

@@ -1,4 +1,4 @@
-import {Column} from "$lib/tables";
+import {Table} from "$lib/tables";
 import {Form} from "$lib/forms";
 import {Infolist} from "$lib/infolists";
 import type {NavigationItem, FormData} from "$lib/panels";
@@ -30,7 +30,7 @@ export abstract class Resource<T extends Record> {
 
     abstract delete(id: any): Promise<void>
 
-    abstract table(): Column[]
+    abstract table(): Table
 
     abstract form(): Form
 

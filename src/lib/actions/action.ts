@@ -2,8 +2,9 @@ import {titleCase} from "$lib/utils";
 
 export class Action {
     name: string;
-    url: string|null = null;
-    label: string ;
+    url: string | (() => string) | null = null;
+    label: string;
+    link: boolean = false;
 
     constructor(name: string) {
         this.name = name
@@ -15,8 +16,21 @@ export class Action {
         return this
     }
 
-    setUrl(url: any): this {
+    setUrl(url: string | (() => string) | null): this {
         this.url = url
         return this
+    }
+
+    setLink(link: boolean): this {
+        this.link = link
+        return this
+    }
+
+    getProps(): { [key: string]: any } {
+        return {
+            label: this.label,
+            url: this.url,
+            link: this.link,
+        };
     }
 }

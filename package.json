@@ -27,6 +27,10 @@
 			"types": "./dist/panels/index.d.ts",
 			"svelte": "./dist/panels/index.js"
 		},
+		"./actions": {
+			"types": "./dist/actions/index.d.ts",
+			"svelte": "./dist/actions/index.js"
+		},
 		"./tables": {
 			"types": "./dist/tables/index.d.ts",
 			"svelte": "./dist/tables/index.js"
@@ -43,6 +47,9 @@
 			],
 			"panels": [
 				"./dist/panels/index.d.ts"
+			],
+			"actions": [
+				"./dist/actions/index.d.ts"
 			],
 			"tables": [
 				"./dist/tables/index.d.ts"

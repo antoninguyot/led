@@ -3,9 +3,12 @@
     import Icon from '@iconify/svelte';
     import type {PaginatedResult, UnpaginatedResult} from "$lib/tables/utils";
     import Pagination from "$lib/tables/Pagination.svelte";
+    import ActionComponent from "$lib/actions/Action.svelte";
     import {data_get} from "$lib/utils";
+    import {Action} from "$lib/actions";
 
     export let columns: Column[];
+    export let actions: Action[];
     export let records: Promise<UnpaginatedResult<any>> | Promise<PaginatedResult<any>>;
     export let emptyStateHeading: string | null = 'No record';
     export let emptyStateDescription: string | null = null;
@@ -55,6 +58,9 @@
                                     <th scope="col"
                                         class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">{column.label}</th>
                                 {/each}
+                                {#if actions.length > 0}
+                                    <th scope="col"></th>
+                                {/if}
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200">
@@ -71,6 +77,14 @@
                                             </a>
                                         </td>
                                     {/each}
+                                    {#if actions.length > 0}
+                                        <td>
+                                            {#each actions as action}
+                                                <ActionComponent record={record}
+                                                                 {...action.getProps()}></ActionComponent>
+                                            {/each}
+                                        </td>
+                                    {/if}
                                 </tr>
                             {/each}
                             </tbody>

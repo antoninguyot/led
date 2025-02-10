@@ -12,7 +12,8 @@
 <Table
         title={resource.getResourceTitle()}
         records={resource.shouldPaginate ? resource.paginate(pageNumber, pageSize): resource.list()}
-        columns={resource.table()}
+        columns={resource.table().columns}
+        actions={resource.table().actions}
         getRecordUrlUsing={resource.getViewUrl ?? resource.getEditUrl}
         emptyStateHeading="No {resource.getResourceTitle()}"
         bind:pageNumber={pageNumber}
