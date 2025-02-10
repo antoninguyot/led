@@ -4,6 +4,7 @@
   import Page from "$lib/panels/Page.svelte";
   import { toast } from "svelte-sonner";
   import { goto } from "$app/navigation";
+  import {setContext} from "svelte";
 
   export let id: any;
 
