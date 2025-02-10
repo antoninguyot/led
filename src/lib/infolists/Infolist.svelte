@@ -1,17 +1,20 @@
 <script lang="ts">
     import type {Entry} from "$lib/infolists/entry";
     import Card from "$lib/panels/Card.svelte";
+    import {data_get} from "$lib/utils.js";
 
     export let entries: Entry[];
     export let state: { [key: string]: any } = {};
     export let columns: number = 1;
 
     function getState(entry: Entry): any {
+        let rawState = data_get(state, entry.name);
+
         if (entry.mutator?.afterLoading) {
-            return entry.mutator.afterLoading(state[entry.name]);
+            return entry.mutator.afterLoading(rawState);
         }
 
-        return state[entry.name];
+        return rawState;
     }
 </script>
 

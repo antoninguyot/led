@@ -3,6 +3,7 @@
     import Action from "$lib/actions/Action.svelte";
     import type {FormData} from "$lib/panels";
     import {readFileUpload} from "$lib/forms/utils";
+    import {data_get, data_set} from "$lib/utils.js";
 
     export let fields: Field[];
     export let submit: (data: FormData) => void;
@@ -20,18 +21,19 @@
             if (field.mutator?.beforeSaving) {
                 state = await field.mutator.beforeSaving(state);
             }
-
-            data.set(field.name, state)
+            data_set(data, field.name, state)
         }
         submit(data);
     }
 
     function getState(field: Field): any {
+        let rawState = data_get(state, field.name);
+
         if (field.mutator?.afterLoading) {
-            return field.mutator.afterLoading(state[field.name]);
+            return field.mutator.afterLoading(rawState);
         }
 
-        return state[field.name];
+        return rawState;
     }
 </script>
 

@@ -11,3 +11,57 @@ export function titleCase(str: string): string {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 }
+
+export function data_get(object: object, key: string): any {
+    // Handle null/undefined object
+    if (object == null) {
+        return null;
+    }
+
+    // Convert the path to an array if it's not already
+    const segments = key.split('.');
+
+    // Handle empty path
+    if (segments.length === 0) {
+        return object;
+    }
+
+    let result = object;
+
+    for (const segment of segments) {
+        // Handle array indices and object properties
+        if (result == null) {
+            return null;
+        }
+
+        // Check if the segment is a valid array index
+        const isArrayIndex = /^\d+$/.test(segment);
+
+        if (Array.isArray(result) && isArrayIndex) {
+            result = result[parseInt(segment, 10)];
+        } else {
+            //@ts-ignore
+            result = result[segment];
+        }
+    }
+
+    return result === undefined ? null : result;
+}
+
+export function data_set(object: Map<string, any>, key: string, value: any): any {
+    if (key.includes('.')) {
+        const parts = key.split('.');
+        const rootKey = parts[0];
+        const existingValue = object.get(rootKey) || {};
+
+        let current = existingValue;
+        for (let i = 1; i < parts.length - 1; i++) {
+            current[parts[i]] = current[parts[i]] || {};
+            current = current[parts[i]];
+        }
+        current[parts[parts.length - 1]] = value;
+        object.set(rootKey, existingValue);
+    } else {
+        object.set(key, value);
+    }
+}

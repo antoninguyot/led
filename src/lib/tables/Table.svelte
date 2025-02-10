@@ -3,7 +3,7 @@
     import Icon from '@iconify/svelte';
     import type {PaginatedResult, UnpaginatedResult} from "$lib/tables/utils";
     import Pagination from "$lib/tables/Pagination.svelte";
-    import Card from "$lib/panels/Card.svelte";
+    import {data_get} from "$lib/utils";
 
     export let columns: Column[];
     export let records: Promise<UnpaginatedResult<any>> | Promise<PaginatedResult<any>>;
@@ -16,11 +16,13 @@
     export let pageSize: number = 10;
 
     function getState(column: Column, record: any): any {
+        let rawState = data_get(record, column.name);
+
         if (column.mutator?.afterLoading) {
-            return column.mutator.afterLoading(record[column.name]);
+            return column.mutator.afterLoading(rawState);
         }
 
-        return record[column.name];
+        return rawState;
     }
 </script>
 
