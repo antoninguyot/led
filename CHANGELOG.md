@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/antoninguyot/led/compare/v1.6.0...v1.7.0) (2025-02-11)
+
+
+### Features
+
+* option to dehydrate null fields ([7bfe7e1](https://github.com/antoninguyot/led/commit/7bfe7e1c615976428b4a989059acde7eea4bb7f7))
+* updated the formdata object to be usable directly with http clients ([d2c48a0](https://github.com/antoninguyot/led/commit/d2c48a0ce7a92a72f41f308c0cd4cc00ac7704cc))
+
 ## [1.6.0](https://github.com/antoninguyot/led/compare/v1.5.0...v1.6.0) (2025-02-10)
 
 
