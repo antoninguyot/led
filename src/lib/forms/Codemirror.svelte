@@ -10,9 +10,7 @@
     import Field from "./Field.svelte";
 
     export let name: string;
-    export let label: string;
     export let state: any = null;
-    export let columnSpan: string | number = 1;
     export let additionalExtensions: any[] = [];
 
     import {onMount, onDestroy, createEventDispatcher} from 'svelte'
@@ -119,7 +117,7 @@
     })
 </script>
 
-<Field {label} {name} {columnSpan}>
+<Field {name} {...$$restProps}>
     <div class="bg-white">
         <div class="contents" bind:this={dom}></div>
     </div>

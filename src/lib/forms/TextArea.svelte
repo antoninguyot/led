@@ -2,12 +2,10 @@
     import Field from "./Field.svelte";
 
     export let name: string;
-    export let label: string;
     export let state: any = null;
-    export let columnSpan: string|number = 1
 </script>
 
-<Field {label} {name} {columnSpan}>
+<Field {name} {...$$restProps}>
     <textarea
         rows="4"
         {name}

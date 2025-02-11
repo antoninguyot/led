@@ -16,9 +16,10 @@ export class Codemirror extends Field {
 
     getProps(): { [key: string]: any } {
         return {
-            label: this.label,
-            columnSpan: this.columnSpan,
-            additionalExtensions: this.extensions,
+            ...super.getProps(),
+            ...{
+                additionalExtensions: this.extensions,
+            }
         };
     }
 }

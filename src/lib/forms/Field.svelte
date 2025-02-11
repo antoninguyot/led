@@ -1,9 +1,9 @@
 <script lang="ts">
-    export let label: string;
+    export let label: string = '';
 
     export let name: string;
 
-    export let columnSpan: string|number;
+    export let columnSpan: string|number = 1;
 
     export let required: boolean = false;
 </script>

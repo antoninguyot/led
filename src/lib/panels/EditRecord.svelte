@@ -13,13 +13,14 @@
   const record = resource.find(id);
 
   async function handleSubmit(data: FormData) {
-    const updatePromise = resource.update(id, data);
-    toast.promise(updatePromise, {
-      loading: "Updating...",
-      success: "Resource updated",
-      error: (e) => (e instanceof Error ? e.message : "Unknown error"),
-    });
-    updatePromise.then(async () => goto(resource.getViewUrl(await record)));
+    console.log(data);
+    // const updatePromise = resource.update(id, data);
+    // toast.promise(updatePromise, {
+    //   loading: "Updating...",
+    //   success: "Resource updated",
+    //   error: (e) => (e instanceof Error ? e.message : "Unknown error"),
+    // });
+    // updatePromise.then(async () => goto(resource.getViewUrl(await record)));
   }
 
   async function getBreadcrumbs() {

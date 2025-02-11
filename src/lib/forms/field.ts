@@ -12,6 +12,7 @@ export class Field {
   columnSpan: string|number = 1;
   mutator: Mutator | null = null;
   required: boolean = false;
+  dehydrateNull: boolean = false;
 
   constructor(name: string) {
     this.name = name;
@@ -35,6 +36,11 @@ export class Field {
 
   setRequired(required: boolean = true): this {
     this.required = required;
+    return this;
+  }
+
+  setDehydrateNull(dehydrateNull: boolean = true): this {
+    this.dehydrateNull = dehydrateNull;
     return this;
   }
 

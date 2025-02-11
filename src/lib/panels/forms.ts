@@ -1,1 +1,1 @@
-export type FormData = Map<string, any>;
+export type FormData = Record<string, any>;
