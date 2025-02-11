@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/antoninguyot/led/compare/v1.7.0...v1.7.1) (2025-02-11)
+
+
+### Bug Fixes
+
+* resource creation ([d1485a1](https://github.com/antoninguyot/led/commit/d1485a1f728417477447e72ccdf211c990a07a4f))
+
 ## [1.7.0](https://github.com/antoninguyot/led/compare/v1.6.0...v1.7.0) (2025-02-11)
 
 
