@@ -48,11 +48,11 @@ export function data_get(object: object, key: string): any {
     return result === undefined ? null : result;
 }
 
-export function data_set(object: Map<string, any>, key: string, value: any): any {
+export function data_set(object: object, key: string, value: any): any {
     if (key.includes('.')) {
         const parts = key.split('.');
         const rootKey = parts[0];
-        const existingValue = object.get(rootKey) || {};
+        const existingValue = (object as any)[rootKey] || {};
 
         let current = existingValue;
         for (let i = 1; i < parts.length - 1; i++) {
@@ -60,8 +60,8 @@ export function data_set(object: Map<string, any>, key: string, value: any): any
             current = current[parts[i]];
         }
         current[parts[parts.length - 1]] = value;
-        object.set(rootKey, existingValue);
+        (object as any)[rootKey] = existingValue;
     } else {
-        object.set(key, value);
+        (object as any)[key] = value;
     }
 }

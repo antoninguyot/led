@@ -12,15 +12,19 @@
 
     async function handleSubmit(e: Event) {
         const formData = new FormData(e.target as HTMLFormElement);
-        const data = new Map<string, any>();
+        const data: FormData = {};
         for (const field of fields) {
             let state = formData.get(field.name)
             if (state instanceof File) {
-                 state = await readFileUpload(state);
+                state = await readFileUpload(state);
             }
             if (field.mutator?.beforeSaving) {
                 state = await field.mutator.beforeSaving(state);
             }
+            if (!field.dehydrateNull && state === null) {
+                continue;
+            }
+
             data_set(data, field.name, state)
         }
         submit(data);
